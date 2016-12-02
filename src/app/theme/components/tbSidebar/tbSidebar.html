@@ -1,6 +1,46 @@
-<aside class="al-sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
-  <ba-menu [menuRoutes]="routes"
-           [menuHeight]="menuHeight"
-           [sidebarCollapsed]="isMenuCollapsed"
-           (expandMenu)="menuExpand()"></ba-menu>
-</aside>
+<div class="sidebar" (mouseleave)="hoverElemTop=outOfArea" sidebarResize>
+  <div class="logo">
+    <a href="http://www.creative-tim.com" class="simple-text">Creative Tim</a>
+  </div>
+  <div class="logo logo-mini">
+    <a href="http://www.creative-tim.com" class="simple-text">Ct</a>
+  </div>
+  <div class="sidebar-wrapper ps-container ps-theme-default ps-active-y">
+    <div class="user">
+      <div class="photo">
+        <img src="../assets/img/faces/avatar.jpg" />
+      </div>
+      <div class="info">
+      <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+        Tania Andrew
+        <b class="caret"></b>
+      </a>
+      <div class="collapse" id="collapseExample">
+        <ul class="nav">
+          <li>
+            <a href="#">My Profile</a>
+          </li>
+          <li>
+            <a href="#">Edit Profile</a>
+          </li>
+          <li>
+            <a href="#">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <tb-menu 
+      [menuRoutes]="routes"
+      [menuHeight]="menuHeight"
+      [sidebarCollapsed]="isMenuCollapsed"
+      (expandMenu)="menuExpand()">
+    </tb-menu>
+    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+      <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+    </div>
+    <div class="ps-scrollbar-y-rail" style="top: 0px; height: 391px; right: 0px;">
+      <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 172px;"></div>
+    </div>
+  </div>
+  <div class="sidebar-background"></div>
+</div>

@@ -1,25 +1,28 @@
-<li *ngIf="!menuItem.hidden" [title]="menuItem.title" [ngClass]="{'al-sidebar-list-item': !child, 'ba-sidebar-sublist-item': child, 'selected': menuItem.selected && !menuItem.expanded, 'with-sub-menu': menuItem.children, 'ba-sidebar-item-expanded': menuItem.expanded}">
+<li *ngIf="!menuItem.hidden" [title]="menuItem.title" [ngClass]="{'active': menuItem.selected}">
 
-  <a *ngIf="!menuItem.children && !menuItem.url" (mouseenter)="onHoverItem($event, item)" [routerLink]="menuItem.route.paths" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+  <a *ngIf="!menuItem.children && !menuItem.url" (mouseenter)="onHoverItem($event, item)" [routerLink]="menuItem.route.paths">
+    <i class="material-icons">{{ menuItem.icon }}</i><span>{{ menuItem.title }}</span>
   </a>
 
-  <a *ngIf="!menuItem.children && menuItem.url" (mouseenter)="onHoverItem($event, item)" [href]="menuItem.url" [target]="menuItem.target" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
+  <a *ngIf="!menuItem.children && menuItem.url" (mouseenter)="onHoverItem($event, item)" [href]="menuItem.url" [target]="menuItem.target">
+    <i class="material-icons">{{ menuItem.icon }}</i>
+    <p>{{ menuItem.title }}</p>
   </a>
 
-  <a *ngIf="menuItem.children" (mouseenter)="onHoverItem($event, item)" href (click)="onToggleSubMenu($event, menuItem)" class="al-sidebar-list-link">
-    <i *ngIf="menuItem.icon" class="{{ menuItem.icon }}"></i><span>{{ menuItem.title }}</span>
-    <b class="fa fa-angle-down" [ngClass]="{'fa-angle-up': menuItem.expanded}"></b>
+  <a *ngIf="menuItem.children" (mouseenter)="onHoverItem($event, item)" href (click)="onToggleSubMenu($event, menuItem)">
+    <i class="material-icons">{{ menuItem.icon }}</i>
+    <p>{{ menuItem.title }}<b class="fa fa-angle-down" [ngClass]="{'fa-angle-up': menuItem.expanded}"></b></p>
   </a>
 
-  <div class="collapse" id="pagesExamples" aria-expanded="false" style="height: 0px;">
-    <ul *ngIf="menuItem.children" class="al-sidebar-sublist" [ngClass]="{'slide-right': menuItem.slideRight}">
-      <ba-menu-item [menuItem]="subItem"
-                    [child]="true"
-                    (itemHover)="onHoverItem($event)"
-                    (toggleSubMenu)="onToggleSubMenu($event, subItem)"
-                    *ngFor="let subItem of menuItem.children"></ba-menu-item>
+  <div class="collapse">
+    <ul *ngIf="menuItem.children" class="nav">
+      <tb-menu-item
+        [menuItem]="subItem"
+        [child]="true"
+        (itemHover)="onHoverItem($event)"
+        (toggleSubMenu)="onToggleSubMenu($event, subItem)"
+        *ngFor="let subItem of menuItem.children">
+      </tb-menu-item>
     </ul>
   </div>
 
