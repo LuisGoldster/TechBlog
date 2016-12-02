@@ -1,1 +1,1 @@
-export * from './baThemeSpinner.service';
+export * from './tbThemeSpinner.service';

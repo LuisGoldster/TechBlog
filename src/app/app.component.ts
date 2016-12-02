@@ -1,9 +1,9 @@
 import './app.loader.ts';
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
 import { GlobalState } from './global.state';
-import { BaImageLoaderService, BaThemePreloader, BaThemeSpinner } from './theme/services';
+import { TbImageLoaderService, TbThemePreloader, TbThemeSpinner } from './theme/services';
 import { layoutPaths } from './theme/theme.constants';
-import { BaThemeConfig } from './theme/theme.config';
+import { TbThemeConfig } from './theme/theme.config';
 
 /*
  * App Component
@@ -25,9 +25,9 @@ export class App {
   isMenuCollapsed: boolean = false;
 
   constructor(private _state: GlobalState,
-              private _imageLoader: BaImageLoaderService,
-              private _spinner: BaThemeSpinner,
-              private _config: BaThemeConfig,
+              private _imageLoader: TbImageLoaderService,
+              private _spinner: TbThemeSpinner,
+              private _config: TbThemeConfig,
               private viewContainerRef: ViewContainerRef) {
 
     this._loadImages();
@@ -39,13 +39,13 @@ export class App {
 
   public ngAfterViewInit(): void {
     // hide spinner once all loaders are completed
-    BaThemePreloader.load().then((values) => {
+    TbThemePreloader.load().then((values) => {
       this._spinner.hide();
     });
   }
 
   private _loadImages(): void {
     // register some loaders
-    BaThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+    TbThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
   }
 }

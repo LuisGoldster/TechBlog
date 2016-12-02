@@ -1,1 +1,1 @@
-export * from './baImageLoader.service';
+export * from './tbImageLoader.service';

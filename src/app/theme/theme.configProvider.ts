@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {colorHelper} from './theme.constants';
+import { Injectable } from '@angular/core';
+import { colorHelper } from './theme.constants';
 import * as _ from 'lodash';
 
 @Injectable()
-export class BaThemeConfigProvider {
+export class TbThemeConfigProvider {
 
   basic = {
     default: '#ffffff',
