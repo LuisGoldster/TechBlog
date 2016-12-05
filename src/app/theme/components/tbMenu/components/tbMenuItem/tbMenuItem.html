@@ -1,16 +1,16 @@
 <li *ngIf="!menuItem.hidden" [title]="menuItem.title" [ngClass]="{'active': menuItem.selected}">
 
   <a *ngIf="!menuItem.children && !menuItem.url" (mouseenter)="onHoverItem($event, item)" [routerLink]="menuItem.route.paths">
-    <i class="material-icons">{{ menuItem.icon }}</i><span>{{ menuItem.title }}</span>
+    <md-icon>{{ menuItem.icon }}</md-icon><span>{{ menuItem.title }}</span>
   </a>
 
   <a *ngIf="!menuItem.children && menuItem.url" (mouseenter)="onHoverItem($event, item)" [href]="menuItem.url" [target]="menuItem.target">
-    <i class="material-icons">{{ menuItem.icon }}</i>
+    <md-icon>{{ menuItem.icon }}</md-icon>
     <p>{{ menuItem.title }}</p>
   </a>
 
   <a *ngIf="menuItem.children" (mouseenter)="onHoverItem($event, item)" href (click)="onToggleSubMenu($event, menuItem)">
-    <i class="material-icons">{{ menuItem.icon }}</i>
+    <md-icon>{{ menuItem.icon }}</md-icon>
     <p>{{ menuItem.title }}<b class="fa fa-angle-down" [ngClass]="{'fa-angle-up': menuItem.expanded}"></b></p>
   </a>
 
