@@ -1,0 +1,15 @@
+li(*ngif='!menuItem.hidden', [title]='menuItem.title', [ngclass]="{'active': menuItem.selected}")
+  a(*ngif='!menuItem.children && !menuItem.url', (mouseenter)='onHoverItem($event, item)', [routerlink]='menuItem.route.paths')
+    md-icon {{ menuItem.icon }}
+    span {{ menuItem.title }}
+  a(*ngif='!menuItem.children && menuItem.url', (mouseenter)='onHoverItem($event, item)', [href]='menuItem.url', [target]='menuItem.target')
+    md-icon {{ menuItem.icon }}
+    p {{ menuItem.title }}
+  a(*ngif='menuItem.children', (mouseenter)='onHoverItem($event, item)', href='', (click)='onToggleSubMenu($event, menuItem)')
+    md-icon {{ menuItem.icon }}
+    p
+      | {{ menuItem.title }}
+      b.fa.fa-angle-down([ngclass]="{'fa-angle-up': menuItem.expanded}")
+  .collapse
+    ul.nav(*ngif='menuItem.children')
+      tb-menu-item([menuitem]='subItem', [child]='true', (itemhover)='onHoverItem($event)', (togglesubmenu)='onToggleSubMenu($event, subItem)', *ngfor='let subItem of menuItem.children')

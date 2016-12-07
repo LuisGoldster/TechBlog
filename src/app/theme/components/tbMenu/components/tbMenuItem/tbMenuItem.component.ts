@@ -3,8 +3,8 @@ import { Component, ViewEncapsulation, Input, Output, EventEmitter } from '@angu
 @Component({
   selector: 'tb-menu-item',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./tbMenuItem.scss')],
-  template: require('./tbMenuItem.html')
+  styles: [require('./tbMenuItem.component.scss')],
+  template: require('./tbMenuItem.component.pug')
 })
 export class TbMenuItem {
 

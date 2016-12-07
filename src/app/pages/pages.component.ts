@@ -3,7 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'pages',
   encapsulation: ViewEncapsulation.None,
   styles: [],
-  template: require('./page.html'),
+  template: require('./page.component.pug'),
 })
 export class Pages {
 

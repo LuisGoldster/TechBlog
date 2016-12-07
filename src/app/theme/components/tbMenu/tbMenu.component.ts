@@ -8,8 +8,8 @@ import { GlobalState } from '../../../global.state';
 @Component({
   selector: 'tb-menu',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./tbMenu.scss')],
-  template: require('./tbMenu.html'),
+  styles: [require('./tbMenu.component.scss')],
+  template: require('./tbMenu.component.pug'),
   providers: [TbMenuService]
 })
 export class TbMenu {

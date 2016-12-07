@@ -182,6 +182,13 @@ module.exports = function (options) {
         {
           test: /\.(jpg|png|gif)$/,
           use: 'file-loader'
+        },
+
+        /* Pug support
+         */
+        { 
+          test: /\.(pug|jade)$/, 
+          loader: 'pug-html-loader' 
         }
       ]
     },
