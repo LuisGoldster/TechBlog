@@ -1,0 +1,194 @@
+.content
+  .container-fluid
+    .row
+      .col-md-6
+        .card
+          .card-header.card-header-icon(data-background-color='rose')
+            i.material-icons mail_outline
+          .card-content
+            h4.card-title Stacked Form
+            form(method='#', action='#')
+              .form-group.label-floating
+                label.control-label Email address
+                input.form-control(type='email')
+              .form-group.label-floating
+                label.control-label Password
+                input.form-control(type='password')
+              .checkbox
+                label
+                  input(type='checkbox', name='optionsCheckboxes')
+                  |  Subscribe to newsletter
+              button.btn.btn-fill.btn-rose(type='submit') Submit
+      .col-md-6
+        .card
+          .card-header.card-header-icon(data-background-color='rose')
+            i.material-icons contacts
+          .card-content
+            h4.card-title Horizontal Form
+            form.form-horizontal
+              .row
+                label.col-md-3.label-on-left Email
+                .col-md-9
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='email')
+              .row
+                label.col-md-3.label-on-left Password
+                .col-md-9
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='password')
+              .row
+                label.col-md-3
+                .col-md-9
+                  .checkbox.form-horizontal-checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      |  Remember Me
+              .row
+                label.col-md-3
+                .col-md-9
+                  .form-group.form-button
+                    button.btn.btn-fill.btn-rose(type='submit') Sign in
+      .col-md-12
+        .card
+          form.form-horizontal(method='get', action='/')
+            .card-header.card-header-text(data-background-color='rose')
+              h4.card-title Form Elements
+            .card-content
+              .row
+                label.col-sm-2.label-on-left With help
+                .col-sm-10
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='text', value='')
+                    span.help-block A block of help text that breaks onto a new line.
+              .row
+                label.col-sm-2.label-on-left Password
+                .col-sm-10
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='password', value='')
+              .row
+                label.col-sm-2.label-on-left Placeholder
+                .col-sm-10
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='text', placeholder='placeholder')
+              .row
+                label.col-sm-2.label-on-left Disabled
+                .col-sm-10
+                  .form-group.label-floating.is-empty
+                    label.control-label
+                    input.form-control(type='text', placeholder='Disabled input here...', disabled='')
+              .row
+                label.col-sm-2.label-on-left Static control
+                .col-sm-10
+                  .form-group
+                    p.form-control-static hello@creative-tim.com
+              .row
+                label.col-sm-2.label-on-left Checkboxes and radios
+                .col-sm-10.checkbox-radios
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      |  First Checkbox
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      |  Second Checkbox
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadios', checked='true')
+                      |  First Radio
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadios')
+                      |  Second Radio
+              .row
+                label.col-sm-2.label-on-left Inline checkboxes
+                .col-sm-10
+                  .checkbox.checkbox-inline
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      | a
+                  .checkbox.checkbox-inline
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      | b
+                  .checkbox.checkbox-inline
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      | c
+      .col-md-12
+        .card
+          form.form-horizontal(method='get', action='/')
+            .card-header.card-header-text(data-background-color='rose')
+              h4.card-title Input Variants
+            .card-content
+              .row
+                label.col-sm-2.label-on-left Custom Checkboxes & radios
+                .col-sm-4.col-sm-offset-1.checkbox-radios
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes')
+                      |  Unchecked
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes', checked='')
+                      |  Checked
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes', disabled='')
+                      |  Disabled Unchecked
+                  .checkbox
+                    label
+                      input(type='checkbox', name='optionsCheckboxes', checked='', disabled='')
+                      |  Disabled Checked
+                .col-sm-5.checkbox-radios
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadios')
+                      |  Radio is off
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadios', checked='true')
+                      |  Radio is on
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadiosDisabled', disabled='')
+                      |  Disabled Radio is off
+                  .radio
+                    label
+                      input(type='radio', name='optionsRadiosDisabled', checked='true', disabled='')
+                      |  Disabled Radio is on
+              .row
+                label.col-sm-2.label-on-left Input with success
+                .col-sm-10
+                  .form-group.label-floating.is-empty.has-success
+                    label.control-label
+                    input.form-control(type='text', value='Success')
+                    span.material-icons.form-control-feedback done
+              .row
+                label.col-sm-2.label-on-left Input with error
+                .col-sm-10
+                  .form-group.label-floating.is-empty.has-error
+                    label.control-label
+                    input.form-control(type='text', value='Error Input')
+                    span.material-icons.form-control-feedback clear
+              .row
+                label.col-sm-2.label-on-left Column sizing
+                .col-sm-10
+                  .row
+                    .col-md-3
+                      .form-group.label-floating.is-empty
+                        label.control-label
+                        input.form-control(type='text', placeholder='.col-md-3')
+                    .col-md-4
+                      .form-group.label-floating.is-empty
+                        label.control-label
+                        input.form-control(type='text', placeholder='.col-md-4')
+                    .col-md-5
+                      .form-group.label-floating.is-empty
+                        label.control-label
+                        input.form-control(type='text', placeholder='.col-md-5')

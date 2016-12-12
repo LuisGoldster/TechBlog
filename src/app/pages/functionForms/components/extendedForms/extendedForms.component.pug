@@ -1,0 +1,177 @@
+.content
+  .container-fluid
+    .row
+      .col-md-4
+        .card
+          .card-header.card-header-icon(data-background-color='rose')
+            i.material-icons today
+          .card-content
+            h4.card-title Datetime Picker
+            .form-group
+              label.label-control Datetime Picker
+              input.form-control.datetimepicker(type='text', value='10/05/2016')
+      .col-md-4
+        .card
+          .card-header.card-header-icon(data-background-color='rose')
+            i.material-icons library_books
+          .card-content
+            h4.card-title Datetime Picker
+            .form-group
+              label.label-control Date Picker
+              input.form-control.datepicker(type='text', value='10/10/2016')
+      .col-md-4
+        .card
+          .card-header.card-header-icon(data-background-color='rose')
+            i.material-icons av_timer
+          .card-content
+            h4.card-title Datetime Picker
+            .form-group
+              label.label-control Time Picker
+              input.form-control.timepicker(type='text', value='14:00')
+    .row
+      .col-md-12
+        .card
+          .card-content
+            br
+            br
+            .row
+              .col-md-6
+                legend Switches
+                .togglebutton
+                  label
+                    input(type='checkbox', checked='')
+                    |  Toggle is on
+                .togglebutton
+                  label
+                    input(type='checkbox')
+                    |  Toggle is off
+              .col-md-6
+                legend Customisable Select
+                .row
+                  .col-lg-5.col-md-6.col-sm-3
+                    select.selectpicker(data-style='btn btn-primary btn-round', title='Single Select', data-size='7')
+                      option(disabled='', selected='') Choose city
+                      option(value='2') Foobar
+                      option(value='3') Is great
+                  .col-lg-5.col-md-6.col-sm-3
+                    select.selectpicker(data-style='select-with-transition', multiple='', title='Choose City', data-size='7')
+                      option(disabled='')  Choose city
+                      option(value='2') Paris 
+                      option(value='3') Bucharest
+                      option(value='4') Rome
+                      option(value='5') New York
+                      option(value='6') Miami 
+                      option(value='7') Piatra Neamt
+                      option(value='8') Paris 
+                      option(value='9') Bucharest
+                      option(value='10') Rome
+                      option(value='11') New York
+                      option(value='12') Miami 
+                      option(value='13') Piatra Neamt
+                      option(value='14') Paris 
+                      option(value='15') Bucharest
+                      option(value='16') Rome
+                      option(value='17') New York
+                      option(value='18') Miami 
+                      option(value='19') Piatra Neamt
+            br
+            br
+            .row
+              .col-md-6
+                legend Tags
+                input.tagsinput(type='text', value='Amsterdam,Washington,Sydney,Beijing', data-role='tagsinput', data-color='rose')
+                // You can change data-color="rose" with one of our colors primary | warning | info | danger | success
+              .col-md-6
+                legend Dropdown & Dropup
+                .row
+                  .col-lg-4.col-md-6.col-sm-3
+                    .dropdown
+                      button.dropdown-toggle.btn.btn-primary.btn-round.btn-block(href='#pablo', data-toggle='dropdown')
+                        | Dropdown
+                        b.caret
+                      ul.dropdown-menu.dropdown-menu-left
+                        li.dropdown-header Dropdown header
+                        li
+                          a(href='#pablo') Action
+                        li
+                          a(href='#pablo') Another action
+                        li
+                          a(href='#pablo') Something else here
+                        li.divider
+                        li
+                          a(href='#pablo') Separated link
+                        li.divider
+                        li
+                          a(href='#pablo') One more separated link
+                  .col-lg-4.col-md-6.col-sm-3
+                    .dropup
+                      button.dropdown-toggle.btn.btn-primary.btn-round.btn-block(href='#pablo', data-toggle='dropdown')
+                        | Dropup
+                        b.caret
+                      ul.dropdown-menu.dropdown-menu-left
+                        li.dropdown-header Dropdown header
+                        li
+                          a(href='#pablo') Action
+                        li
+                          a(href='#pablo') Another action
+                        li
+                          a(href='#pablo') Something else here
+                        li.divider
+                        li
+                          a(href='#pablo') Separated link
+                        li.divider
+                        li
+                          a(href='#pablo') One more separated link
+            br
+            br
+            .row
+              .col-md-6
+                legend Progress Bars
+                .progress.progress-line-primary
+                  .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 30%;')
+                    span.sr-only 60% Complete
+                .progress.progress-line-info
+                  .progress-bar.progress-bar-info(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 60%;')
+                    span.sr-only 60% Complete
+                .progress.progress-line-danger
+                  .progress-bar.progress-bar-success(style='width: 35%')
+                    span.sr-only 35% Complete (success)
+                  .progress-bar.progress-bar-warning(style='width: 20%')
+                    span.sr-only 20% Complete (warning)
+                  .progress-bar.progress-bar-danger(style='width: 10%')
+                    span.sr-only 10% Complete (danger)
+              .col-md-6
+                legend Sliders
+                #sliderRegular.slider
+                #sliderDouble.slider.slider-info
+            .row
+              .col-md-4.col-sm-4
+                legend Regular Image
+                .fileinput.fileinput-new.text-center(data-provides='fileinput')
+                  .fileinput-new.thumbnail
+                    img(src='../../assets/img/image_placeholder.jpg', alt='...')
+                  .fileinput-preview.fileinput-exists.thumbnail
+                  div
+                    span.btn.btn-rose.btn-round.btn-file
+                      span.fileinput-new Select image
+                      span.fileinput-exists Change
+                      input(type='file', name='...')
+                    a.btn.btn-danger.btn-round.fileinput-exists(href='#pablo', data-dismiss='fileinput')
+                      i.fa.fa-times
+                      |  Remove
+              .col-md-3.col-sm-4
+                legend Avatar
+                .fileinput.fileinput-new.text-center(data-provides='fileinput')
+                  .fileinput-new.thumbnail.img-circle
+                    img(src='../../assets/img/placeholder.jpg', alt='...')
+                  .fileinput-preview.fileinput-exists.thumbnail.img-circle
+                  div
+                    span.btn.btn-round.btn-rose.btn-file
+                      span.fileinput-new Add Photo
+                      span.fileinput-exists Change
+                      input(type='file', name='...')
+                    br
+                    a.btn.btn-danger.btn-round.fileinput-exists(href='#pablo', data-dismiss='fileinput')
+                      i.fa.fa-times
+                      |  Remove
+        // end card

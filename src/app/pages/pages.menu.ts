@@ -15,7 +15,37 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'pages',
+        path: 'functionForms',
+        data: {
+          menu: {
+            title: 'Forms',
+            icon: 'content_paste',
+            selected: false,
+            expanded: false,
+            order: 100,
+          }
+        },
+        children: [
+          {
+            path: 'regularForms',
+            data: {
+              menu: {
+                title: 'Regular Forms',
+              }
+            }
+          },
+          {
+            path: 'extendedForms',
+            data: {
+              menu: {
+                title: 'Extended Forms',
+              }
+            }
+          }
+        ]
+      },
+      {
+        path: 'functionPages',
         data: {
           menu: {
             title: 'Pages',
@@ -27,47 +57,7 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'pricing',
-            data: {
-              menu: {
-                title: 'Pricing',
-              }
-            }
-          },
-          {
-            path: 'timeline',
-            data: {
-              menu: {
-                title: 'Timeline',
-              }
-            }
-          },
-          {
-            path: 'login',
-            data: {
-              menu: {
-                title: 'Login Page',
-              }
-            }
-          },
-          {
-            path: 'register',
-            data: {
-              menu: {
-                title: 'Register Page',
-              }
-            }
-          },
-          {
-            path: 'lock',
-            data: {
-              menu: {
-                title: 'Lock Screen Page',
-              }
-            }
-          },
-          {
-            path: 'user',
+            path: 'userProfile',
             data: {
               menu: {
                 title: 'User Profile',

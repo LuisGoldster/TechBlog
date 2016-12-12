@@ -3,7 +3,6 @@ import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
-import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
 import { TbThemeConfig } from './theme.config';
 import { TbThemeConfigProvider } from './theme.configProvider';
@@ -33,10 +32,6 @@ const NGA_SERVICES = [
   TbThemeSpinner
 ];
 
-const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: true
-};
-
 @NgModule({
   declarations: [
     ...NGA_COMPONENTS
@@ -45,8 +40,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule,
-    PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
+    ReactiveFormsModule
   ],
   exports: [
     ...NGA_COMPONENTS

@@ -1,7 +1,7 @@
 li(*ngIf='!menuItem.hidden', [title]='menuItem.title', [ngClass]="{'active': menuItem.selected}")
   a(*ngIf='!menuItem.children && !menuItem.url', (mouseenter)='onHoverItem($event, item)', [routerLink]='menuItem.route.paths')
     md-icon {{ menuItem.icon }}
-    span {{ menuItem.title }}
+    p {{ menuItem.title }}
   a(*ngIf='!menuItem.children && menuItem.url', (mouseenter)='onHoverItem($event, item)', [href]='menuItem.url', [target]='menuItem.target')
     md-icon {{ menuItem.icon }}
     p {{ menuItem.title }}
@@ -9,10 +9,10 @@ li(*ngIf='!menuItem.hidden', [title]='menuItem.title', [ngClass]="{'active': men
     md-icon {{ menuItem.icon }}
     p
       | {{ menuItem.title }}
-      b.fa.fa-angle-down([ngClass]="{'fa-angle-up': menuItem.expanded}")
+      b.caret
   .collapse
     ul.nav(*ngIf='menuItem.children')
-      tb-menu-item(
+      tb-menu-item.nav(
         [menuItem]='subItem',
         [child]='true',
         (itemHover)='onHoverItem($event)',
