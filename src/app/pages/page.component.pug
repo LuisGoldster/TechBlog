@@ -1,68 +1,69 @@
-tb-sidebar
-.main-panel
-  .nav.navbar.navbar-transparent.navbar-absolute
-    .container-fluid
-      .navbar-minimize
-        button#minimizeSidebar.btn.btn-round.btn-white.btn-fill.btn-just-icon
-          i.material-icons.visible-on-sidebar-regular more_vert
-          i.material-icons.visible-on-sidebar-mini view_list
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand(href='#')  Dashboard 
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav.navbar-right
-          li
-            a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
-              md-icon dashboard
-              p.hidden-lg.hidden-md Dashboard
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown')
-              md-icon notifications
-              span.notification 5
-              p.hidden-lg.hidden-md
-                | Notifications
-                b.caret
-            ul.dropdown-menu
-              li
-                a(href='#') Mike John responded to your email
-              li
-                a(href='#') You have 5 new tasks
-              li
-                a(href='#') You're now friend with Andrew
-              li
-                a(href='#') Another Notification
-              li
-                a(href='#') Another One
-          li
-            a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
-              md-icon person
-              p.hidden-lg.hidden-md Profile
-          li.separator.hidden-lg.hidden-md
-        form.navbar-form.navbar-right(role='search')
-          .form-group.form-search.is-empty
-            input.form-control(type='text', placeholder='Search')
-            span.material-input
-          button.btn.btn-white.btn-round.btn-just-icon(type='submit')
-            md-icon search
-            .ripple-container
-  router-outlet
-  footer.footer
-    .container-fluid
-      nav.pull-left
-        ul
-          li
-            a(href='#') Home
-          li
-            a(href='#') Company
-          li
-            a(href='#') Portfolio
-          li
-            a(href='#') Blog
-      p.copyright.pull-right
-        | ©
-        a(href='http://www.creative-tim.com') Creative Tim
-        | , made with love for a better web
+.wrapper
+  tb-sidebar
+  perfect-scrollbar.main-panel
+    .nav.navbar.navbar-transparent.navbar-absolute
+      .container-fluid
+        .navbar-minimize
+          button#minimizeSidebar.btn.btn-round.btn-white.btn-fill.btn-just-icon
+            i.material-icons.visible-on-sidebar-regular more_vert
+            i.material-icons.visible-on-sidebar-mini view_list
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#')  Dashboard 
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+                md-icon dashboard
+                p.hidden-lg.hidden-md Dashboard
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                md-icon notifications
+                span.notification 5
+                p.hidden-lg.hidden-md
+                  | Notifications
+                  b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#') Mike John responded to your email
+                li
+                  a(href='#') You have 5 new tasks
+                li
+                  a(href='#') You're now friend with Andrew
+                li
+                  a(href='#') Another Notification
+                li
+                  a(href='#') Another One
+            li
+              a.dropdown-toggle(href='#pablo', data-toggle='dropdown')
+                md-icon person
+                p.hidden-lg.hidden-md Profile
+            li.separator.hidden-lg.hidden-md
+          form.navbar-form.navbar-right(role='search')
+            .form-group.form-search.is-empty
+              input.form-control(type='text', placeholder='Search')
+              span.material-input
+            button.btn.btn-white.btn-round.btn-just-icon(type='submit')
+              md-icon search
+              .ripple-container
+    router-outlet
+    footer.footer
+      .container-fluid
+        nav.pull-left
+          ul
+            li
+              a(href='#') Home
+            li
+              a(href='#') Company
+            li
+              a(href='#') Portfolio
+            li
+              a(href='#') Blog
+        p.copyright.pull-right
+          | ©
+          a(href='http://www.creative-tim.com') Creative Tim
+          | , made with love for a better web

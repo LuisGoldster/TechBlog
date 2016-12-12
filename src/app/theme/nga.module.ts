@@ -7,6 +7,8 @@ import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
 import { TbThemeConfig } from './theme.config';
 import { TbThemeConfigProvider } from './theme.configProvider';
 
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
+
 import {
   TbMenuItem,
   TbMenu,
@@ -40,7 +42,8 @@ const NGA_SERVICES = [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PerfectScrollbarModule.forChild()
   ],
   exports: [
     ...NGA_COMPONENTS
