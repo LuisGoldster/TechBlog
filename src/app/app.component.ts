@@ -14,7 +14,7 @@ import { TbThemeConfig } from './theme/theme.config';
   encapsulation: ViewEncapsulation.None,
   styles: [require('normalize.css'), require('./app.scss')],
   template: `
-    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" baThemeRun>
+    <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" tbThemeRun>
       <div class="additional-bg"></div>
       <router-outlet></router-outlet>
     </main>

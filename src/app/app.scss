@@ -9938,7 +9938,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .navbar-absolute {
-  position: absolute;
+  //position: absolute;
   width: 100%;
   padding-top: 10px;
   z-index: 1029;
@@ -10178,6 +10178,7 @@ footer .btn {
   border-radius: 6px;
   color: rgba(0,0,0, 0.87);
   background: #fff;
+  border: 0px;
 }
 .card .card-height-indicator {
   margin-top: 100%;
