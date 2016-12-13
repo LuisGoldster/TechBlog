@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: FunctionPages,
     children: [
-      { path: 'userProfile', component: UserProfile }
+      { path: 'userprofile', component: UserProfile }
     ]
   }
 ];

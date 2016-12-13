@@ -11,13 +11,22 @@ const routes: Routes = [
   //   loadChildren: () => System.import('./register/register.module')
   // },
   {
-    path: 'pages',
+    path: '',
     component: Pages,
-    children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', loadChildren: () => System.import('./dashboard/dashboard.module') },
-      { path: 'functionForms', loadChildren: () => System.import('./functionForms/functionForms.module') },
-      { path: 'functionPages', loadChildren: () => System.import('./functionPages/functionPages.module') }
+    children: [{
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }, {
+        path: 'dashboard',
+        loadChildren: () => System.import('./dashboard/dashboard.module')
+      }, {
+        path: 'forms',
+        loadChildren: () => System.import('./functionForms/functionForms.module')
+      }, {
+        path: 'pages',
+        loadChildren: () => System.import('./functionPages/functionPages.module')
+      }
       // { path: 'charts', loadChildren: () => System.import('./charts/charts.module') },
       // { path: 'ui', loadChildren: () => System.import('./ui/ui.module') },
       // { path: 'forms', loadChildren: () => System.import('./forms/forms.module') },

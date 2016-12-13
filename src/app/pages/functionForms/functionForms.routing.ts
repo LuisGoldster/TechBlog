@@ -10,8 +10,8 @@ const routes: Routes = [
     path: '',
     component: FunctionForms,
     children: [
-      { path: 'regularForms', component: RegularForms },
-      { path: 'extendedForms', component: ExtendedForms }
+      { path: 'regular', component: RegularForms },
+      { path: 'extended', component: ExtendedForms }
     ]
   }
 ];

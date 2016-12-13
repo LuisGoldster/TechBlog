@@ -1,6 +1,6 @@
 export const PAGES_MENU = [
   {
-    path: 'pages',
+    path: '',
     children: [
       {
         path: 'dashboard',
@@ -15,7 +15,7 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'functionForms',
+        path: 'forms',
         data: {
           menu: {
             title: 'Forms',
@@ -27,7 +27,7 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'regularForms',
+            path: 'regular',
             data: {
               menu: {
                 title: 'Regular Forms',
@@ -35,7 +35,7 @@ export const PAGES_MENU = [
             }
           },
           {
-            path: 'extendedForms',
+            path: 'extended',
             data: {
               menu: {
                 title: 'Extended Forms',
@@ -45,7 +45,7 @@ export const PAGES_MENU = [
         ]
       },
       {
-        path: 'functionPages',
+        path: 'pages',
         data: {
           menu: {
             title: 'Pages',
@@ -57,7 +57,7 @@ export const PAGES_MENU = [
         },
         children: [
           {
-            path: 'userProfile',
+            path: 'userprofile',
             data: {
               menu: {
                 title: 'User Profile',
