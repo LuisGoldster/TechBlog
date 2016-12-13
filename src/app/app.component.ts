@@ -12,7 +12,7 @@ import { TbThemeConfig } from './theme/theme.config';
 @Component({
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('normalize.css'), require('./app.scss')],
+  styles: [require('./app.scss')],
   template: `
     <main [ngClass]="{'menu-collapsed': isMenuCollapsed}" tbThemeRun>
       <div class="additional-bg"></div>

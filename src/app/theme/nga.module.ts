@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MdIcon, MdIconRegistry } from '@angular/material/icon/icon';
 
 import { TbThemeConfig } from './theme.config';
 import { TbThemeConfigProvider } from './theme.configProvider';
@@ -22,7 +21,6 @@ import {
 } from './services';
 
 const NGA_COMPONENTS = [
-  MdIcon,
   TbMenuItem,
   TbMenu,
   TbSidebar
@@ -54,7 +52,6 @@ export class NgaModule {
     return <ModuleWithProviders> {
       ngModule: NgaModule,
       providers: [
-        MdIconRegistry,
         TbThemeConfigProvider,
         TbThemeConfig,
         ...NGA_SERVICES
