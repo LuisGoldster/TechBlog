@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 @Component({
   selector: 'tb-sidebar',
   encapsulation: ViewEncapsulation.None,
-  styles: [require('./tbSidebar.scss')],
+  styles: [require('./tbSidebar.component.scss')],
   template: require('./tbSidebar.component.pug')
 })
 export class TbSidebar {
