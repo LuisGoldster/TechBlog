@@ -10,6 +10,7 @@ const routes: Routes = [
     path: '',
     component: FunctionForms,
     children: [
+      { path: '', redirectTo: 'regular', pathMatch: 'full' },
       { path: 'regular', component: RegularForms },
       { path: 'extended', component: ExtendedForms }
     ]

@@ -9,6 +9,7 @@ const routes: Routes = [
     path: '',
     component: FunctionPages,
     children: [
+      { path: '', redirectTo: 'userprofile', pathMatch: 'full' },
       { path: 'userprofile', component: UserProfile }
     ]
   }
