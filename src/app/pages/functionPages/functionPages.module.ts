@@ -8,6 +8,8 @@ import { routing }       from './functionPages.routing';
 import { RatingModule } from 'ng2-bootstrap/ng2-bootstrap';
 import { FunctionPages } from './functionPages.component';
 import { UserProfile } from './components/userProfile/userProfile.component';
+import { Articles } from './components/articles/articles.component';
+import { Categories } from './components/categories/categories.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { UserProfile } from './components/userProfile/userProfile.component';
   ],
   declarations: [
     FunctionPages,
-    UserProfile
+    UserProfile,
+    Articles,
+    Categories
   ]
 })
 export default class FunctionPagesModule {

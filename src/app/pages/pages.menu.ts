@@ -61,6 +61,25 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'User Profile',
+                icon: 'contact_mail'
+              }
+            }
+          },
+          {
+            path: 'articles',
+            data: {
+              menu: {
+                title: 'Articles',
+                icon: 'assignment'
+              }
+            }
+          },
+          {
+            path: 'categories',
+            data: {
+              menu: {
+                title: 'Categories',
+                icon: 'style'
               }
             }
           }
