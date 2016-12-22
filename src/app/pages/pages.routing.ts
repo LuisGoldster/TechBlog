@@ -21,11 +21,14 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () => System.import('./dashboard/dashboard.module')
       }, {
-        path: 'forms',
-        loadChildren: () => System.import('./functionForms/functionForms.module')
+        path: 'articles',
+        loadChildren: () => System.import('./articles/articles.module')
+      }, {
+        path: 'categories',
+        loadChildren: () => System.import('./categories/categories.module')
       }, {
         path: 'pages',
-        loadChildren: () => System.import('./functionPages/functionPages.module')
+        loadChildren: () => System.import('./examples/examples.module')
       }
       // { path: 'charts', loadChildren: () => System.import('./charts/charts.module') },
       // { path: 'ui', loadChildren: () => System.import('./ui/ui.module') },

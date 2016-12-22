@@ -1,11 +1,11 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'extended-forms',
+  selector: 'user-profile',
   encapsulation: ViewEncapsulation.None,
-  template: require('./extendedForms.component.pug'),
+  template: require('./user-profile.component.pug'),
 })
-export class ExtendedForms {
+export class UserProfile {
 
   constructor() {
   }

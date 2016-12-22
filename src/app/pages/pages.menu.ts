@@ -15,10 +15,34 @@ export const PAGES_MENU = [
         }
       },
       {
-        path: 'forms',
+        path: 'articles',
         data: {
           menu: {
-            title: 'Forms',
+            title: 'Articles',
+            icon: 'assignment',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: 'categories',
+        data: {
+          menu: {
+            title: 'Categories',
+            icon: 'style',
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: 'pages',
+        data: {
+          menu: {
+            title: 'Example Pages',
             icon: 'content_paste',
             selected: false,
             expanded: false,
@@ -41,45 +65,12 @@ export const PAGES_MENU = [
                 title: 'Extended Forms',
               }
             }
-          }
-        ]
-      },
-      {
-        path: 'pages',
-        data: {
-          menu: {
-            title: 'Pages',
-            icon: 'image',
-            selected: false,
-            expanded: false,
-            order: 100,
-          }
-        },
-        children: [
+          },
           {
             path: 'userprofile',
             data: {
               menu: {
-                title: 'User Profile',
-                icon: 'contact_mail'
-              }
-            }
-          },
-          {
-            path: 'articles',
-            data: {
-              menu: {
-                title: 'Articles',
-                icon: 'assignment'
-              }
-            }
-          },
-          {
-            path: 'categories',
-            data: {
-              menu: {
-                title: 'Categories',
-                icon: 'style'
+                title: 'User Profile'
               }
             }
           }

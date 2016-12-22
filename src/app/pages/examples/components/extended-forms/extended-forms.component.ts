@@ -1,11 +1,11 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'regular-forms',
+  selector: 'extended-forms',
   encapsulation: ViewEncapsulation.None,
-  template: require('./regularForms.component.pug'),
+  template: require('./extended-forms.component.pug'),
 })
-export class RegularForms {
+export class ExtendedForms {
 
   constructor() {
   }

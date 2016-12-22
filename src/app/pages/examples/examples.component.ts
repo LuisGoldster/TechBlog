@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'forms',
+  selector: 'examples',
   styles: [],
   template: `<router-outlet></router-outlet>`
 })
-export class FunctionForms {
+export class Examples {
 
   constructor() {
   }
