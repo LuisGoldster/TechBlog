@@ -77,11 +77,11 @@ export class TbThemeConfigProvider {
     return this.conf;
   }
 
-  changeTheme (theme) {
+  changeTheme(theme) {
     _.merge(this.get().theme, theme);
   }
 
-  changeColors (colors) {
+  changeColors(colors) {
     _.merge(this.get().colors, colors);
   }
 }
