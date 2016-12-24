@@ -231,7 +231,6 @@ module.exports = function (options) {
         name: ['polyfills', 'vendor_angular', 'vendor_common'].reverse()
       }),
 
-
       /**
        * Plugin: ContextReplacementPlugin
        * Description: Provides context to Angular's use of System.import

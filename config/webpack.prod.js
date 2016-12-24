@@ -15,6 +15,7 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const AggressiveSplittingPlugin = require('webpack/lib/optimize/AggressiveSplittingPlugin');
 
 /**
  * Webpack Constants
@@ -205,7 +206,6 @@ module.exports = function (env) {
        *
        * See: https://github.com/webpack/compression-webpack-plugin
        */
-      //  install compression-webpack-plugin
       new CompressionPlugin({
         asset: "[path].gz[query]",
         algorithm: "gzip",
@@ -213,6 +213,19 @@ module.exports = function (env) {
         threshold: 10240,
         minRatio: 0.8
       }),
+
+      /**
+       * Plugin: AggressiveSplittingPlugin
+       * Description: Splitting the bundle into multiple smaller chunks
+       * Works best with a HTTP2 web server
+       *
+       * See: https://github.com/webpack/webpack/tree/master/examples/http2-aggressive-splitting
+       */
+      // Waiting for https://github.com/ampedandwired/html-webpack-plugin/issues/446
+      // new webpack.optimize.AggressiveSplittingPlugin({
+      //   minSize: 30000,
+      //   maxSize: 250000
+      // }),
 
       /**
        * Plugin LoaderOptionsPlugin (experimental)
