@@ -46,6 +46,6 @@ export class App {
 
   private _loadImages(): void {
     // register some loaders
-    TbThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'sky-bg.jpg'));
+    TbThemePreloader.registerLoader(this._imageLoader.load(layoutPaths.images.root + 'loaded.png'));
   }
 }
