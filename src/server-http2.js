@@ -11,10 +11,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-// app.listen(3000, () => {
-//   console.log('Example app listening on port 3000!')
-// })
-
 var options = {
   key: fs.readFileSync(path.join(__dirname, '../certificate/server.key')),
   cert: fs.readFileSync(path.join(__dirname, '../certificate/server.crt'))
@@ -22,7 +18,7 @@ var options = {
 
 http2
   .createServer(options, app)
-  .listen(80, () => {
-    console.log("Server is listening on https://localhost:80");
+  .listen(8080, () => {
+    console.log("Server is listening on https://localhost:8080");
   }
 )
