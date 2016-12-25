@@ -222,9 +222,9 @@ module.exports = function (env) {
        * See: https://github.com/webpack/webpack/tree/master/examples/http2-aggressive-splitting
        */
       // Waiting for https://github.com/ampedandwired/html-webpack-plugin/issues/446
-      // new webpack.optimize.AggressiveSplittingPlugin({
+      // new AggressiveSplittingPlugin({
       //   minSize: 30000,
-      //   maxSize: 250000
+      //   maxSize: 50000
       // }),
 
       /**

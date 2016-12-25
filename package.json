@@ -41,6 +41,7 @@
     "leaflet": "^0.7.7",
     "leaflet-map": "^0.2.1",
     "lodash": "^4.12.0",
+    "morgan": "^1.7.0",
     "ng2-bootstrap": "1.1.14",
     "ng2-ckeditor": "1.0.7",
     "ng2-smart-table": "^0.3.2",
@@ -48,6 +49,7 @@
     "ng2-uploader": "1.1.0",
     "postcss-loader": "^1.0.0",
     "rxjs": "5.0.0-beta.12",
+    "spdy": "^3.4.4",
     "tether": "^1.2.4",
     "zone.js": "~0.7.1"
   },
