@@ -53,9 +53,12 @@ let serverPlugins = [
 ];
 let serverConfig = {
   target: 'node',
-  entry: '../src/server-http1', // use the entry file of the node server if everything is ts rather than es5
+  entry: {
+    server_http1: '../src/server-http1.ts',
+    server_http2: '../src/server-http2.ts'
+  },
   output: {
-    filename: 'server.js',
+    filename: '[name].js',
     path: root('../dist/server'),
     libraryTarget: 'commonjs2'
   },
@@ -70,8 +73,8 @@ let serverConfig = {
   node: {
     global: true,
     crypto: true,
-    __dirname: true,
-    __filename: true,
+    __dirname: false,
+    __filename: false,
     process: true,
     Buffer: true
   }
