@@ -59,7 +59,7 @@ module.exports = function (options) {
       'vendor_angular': './src/vendor-angular.browser.ts',
       'vendor_common': './src/vendor-common.browser.ts',
       'main': './src/main.browser.ts'
-
+      
     },
 
     /*
