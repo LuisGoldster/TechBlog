@@ -5,6 +5,7 @@ import * as spdy from 'spdy';
 import * as fs from 'fs';
 
 const app = express();
+app.set('port', process.env.PORT || 8080);
 app.use(compression({ threshold: 0 }));
 app.use(express.static(path.join(__dirname, '..')));
 app.get('/*', (req, res) => {
@@ -14,11 +15,10 @@ app.get('/*', (req, res) => {
 const options = {
   key: fs.readFileSync(path.join(__dirname, '../../certificate/server.key')),
   cert: fs.readFileSync(path.join(__dirname, '../../certificate/server.crt'))
-}
+};
 
-spdy
-  .createServer(options, <any> app)
-  .listen(8080, () => {
-    console.log("Server is listening on https://localhost:8080");
-  }
-)
+const server = spdy
+  .createServer(options, app as any)
+  .listen(app.get('port'), () => {
+    console.log(`Listening on: https://localhost:${server.address().port}`);
+  });
