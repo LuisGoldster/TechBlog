@@ -1,8 +1,10 @@
-const express = require('express');
+const express     = require('express');
 const compression = require('compression');
-const path = require('path');
-const spdy = require('spdy');
-const fs = require('fs');
+const path        = require('path');
+const spdy        = require('spdy');
+const morgan      = require('morgan');
+const fs          = require('fs');
+const NEO_ASYNC   = require('neo-async');
 const ROOT = path.join(__dirname, '../../dist');
 
 let filesToPush = [];
@@ -16,26 +18,44 @@ fs.readdir(ROOT, (error, data) => {
 
 const app = express();
 app.set('port', process.env.PORT || 8080);
+app.use(morgan('dev'))
 app.use(compression());
 app.use(express.static(ROOT));
-app.get('/*', (req, res) => {
-  console.log(res.push);
-  filesToPush.forEach((fileToPush) => {
-    fs.readFile(path.join(ROOT, fileToPush), (error, data) => {
-      let stream = res.push(`/${fileToPush}`, {
-        req: {'accept': '**/*'},
-        res: {'content-type': 'application/javascript'}
-      });
-      console.log(stream);
-      stream.on('error', err => {
-        console.log(err);
-      });
-      stream.end(data);
+
+app.use((req, res, next) => {
+  let assets = filesToPush
+    .map((fileToPush) => {
+      let fileToPushPath = path.join(ROOT, fileToPush);
+      return (callBack) => {
+        fs.readFile(fileToPushPath, (error, data) => {
+          if (error) return callBack(error)
+          try {
+            res.push(`/${fileToPush}`, {
+              request: {
+                'accept': '*/*',
+                'accept-encoding': 'gzip'
+              },
+              response: {
+                'content-type': 'application/javascript',
+                'content-encoding': 'gzip'
+              }
+            }).end(data);
+            callBack();
+          } catch(e) {
+            callBack(e)
+          }
+        });
+      };
+    });
+  assets.unshift((callBack) => {
+    fs.readFile(path.join(ROOT, 'index.html'), (error, data) => {
+      if (error) return callBack(error);
+      res.write(data);
+      callBack();
     });
   });
-  fs.readFile(path.join(ROOT, 'index.html'), (error, data) => {
-    res.writeHead(200);
-    res.end(data);
+  NEO_ASYNC.parallel(assets, (results) => {
+    res.end();
   });
 });
 
