@@ -1,20 +1,20 @@
 import { Routes, RouterModule }  from '@angular/router';
 
-import { Examples } from './examples.component';
-import { RegularForms } from './components/regular-forms/regular-forms.component';
-import { ExtendedForms } from './components/extended-forms/extended-forms.component';
-import { UserProfile } from './components/user-profile/user-profile.component';
+import { ExamplesComponent } from './examples.component';
+import { RegularFormsComponent } from './components/regular-forms/index';
+import { ExtendedFormsComponent } from './components/extended-forms/index';
+import { UserProfileComponent } from './components/user-profile/index';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Examples,
+    component: ExamplesComponent,
     children: [
       { path: '', redirectTo: 'regular', pathMatch: 'full' },
-      { path: 'regular', component: RegularForms },
-      { path: 'extended', component: ExtendedForms },
-      { path: 'userprofile', component: UserProfile },
+      { path: 'regular', component: RegularFormsComponent },
+      { path: 'extended', component: ExtendedFormsComponent },
+      { path: 'userprofile', component: UserProfileComponent },
     ]
   }
 ];

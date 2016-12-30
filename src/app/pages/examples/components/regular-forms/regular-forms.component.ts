@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   template: require('./regular-forms.component.pug'),
 })
-export class RegularForms {
+export class RegularFormsComponent {
 
   constructor() {
   }

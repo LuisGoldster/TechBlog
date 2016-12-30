@@ -1,13 +1,13 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
-  selector: 'dashboard',
+  selector: 'login',
   encapsulation: ViewEncapsulation.None,
-  template: require('./dashboard.component.pug')
+  template: require('./login.component.pug')
 })
-export class DashboardComponent {
+export class LoginComponent {
 
   constructor() {
   }
-
+  
 }

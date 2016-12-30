@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   template: require('./extended-forms.component.pug'),
 })
-export class ExtendedForms {
+export class ExtendedFormsComponent {
 
   constructor() {
   }

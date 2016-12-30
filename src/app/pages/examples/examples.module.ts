@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
 import { routing } from './examples.routing';
-import { Examples } from './examples.component';
-import { RegularForms } from './components/regular-forms/regular-forms.component';
-import { ExtendedForms } from './components/extended-forms/extended-forms.component';
-import { UserProfile } from './components/user-profile/user-profile.component';
+import { ExamplesComponent } from './examples.component';
+import { RegularFormsComponent } from './components/regular-forms/index';
+import { ExtendedFormsComponent } from './components/extended-forms/index';
+import { UserProfileComponent } from './components/user-profile/index';
 
 
 @NgModule({
@@ -18,10 +18,10 @@ import { UserProfile } from './components/user-profile/user-profile.component';
     routing
   ],
   declarations: [
-    Examples,
-    RegularForms,
-    ExtendedForms,
-    UserProfile
+    ExamplesComponent,
+    RegularFormsComponent,
+    ExtendedFormsComponent,
+    UserProfileComponent
   ],
   providers: []
 })

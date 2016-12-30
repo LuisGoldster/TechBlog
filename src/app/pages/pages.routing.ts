@@ -1,5 +1,5 @@
 import { Routes, RouterModule }  from '@angular/router';
-import { Pages } from './pages.component';
+import { PagesComponent } from './pages.component';
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   // {
@@ -12,7 +12,7 @@ const routes: Routes = [
   // },
   {
     path: '',
-    component: Pages,
+    component: PagesComponent,
     children: [{
         path: '',
         redirectTo: 'dashboard',

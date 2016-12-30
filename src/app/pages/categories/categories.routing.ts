@@ -1,12 +1,12 @@
 import { Routes, RouterModule }  from '@angular/router';
 
-import { Categories } from './categories.component';
+import { CategoriesComponent } from './categories.component';
 
 // noinspection TypeScriptValidateTypes
 const routes: Routes = [
   {
     path: '',
-    component: Categories,
+    component: CategoriesComponent,
     children: []
   }
 ];

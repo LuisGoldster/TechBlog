@@ -1,0 +1,90 @@
+nav.navbar.navbar-primary.navbar-transparent.navbar-absolute
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navigation-example-2')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href=' ../dashboard.html ') Material Dashboard Pro
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='../dashboard.html')
+            i.material-icons dashboard
+            |  Dashboard
+        li
+          a(href='register.html')
+            i.material-icons person_add
+            |  Register
+        li.active
+          a(href='login.html')
+            i.material-icons fingerprint
+            |  Login
+        li
+          a(href='lock.html')
+            i.material-icons lock_open
+            |  Lock
+.wrapper.wrapper-full-page
+  .full-page.login-page(filter-color='black', data-image='../../assets/img/login.jpeg')
+    // you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose "
+    .content
+      .container
+        .row
+          .col-md-4.col-sm-6.col-md-offset-4.col-sm-offset-3
+            form(method='#', action='#')
+              .card.card-login.card-hidden
+                .card-header.text-center(data-background-color='rose')
+                  h4.card-title Login
+                  .social-line
+                    a.btn.btn-just-icon.btn-simple(href='#btn')
+                      i.fa.fa-facebook-square
+                    a.btn.btn-just-icon.btn-simple(href='#pablo')
+                      i.fa.fa-twitter
+                    a.btn.btn-just-icon.btn-simple(href='#eugen')
+                      i.fa.fa-google-plus
+                p.category.text-center
+                  | Or Be Classical
+                .card-content
+                  .input-group
+                    span.input-group-addon
+                      i.material-icons face
+                    .form-group.label-floating
+                      label.control-label First Name
+                      input.form-control(type='text')
+                  .input-group
+                    span.input-group-addon
+                      i.material-icons email
+                    .form-group.label-floating
+                      label.control-label Email address
+                      input.form-control(type='email')
+                  .input-group
+                    span.input-group-addon
+                      i.material-icons lock_outline
+                    .form-group.label-floating
+                      label.control-label Password
+                      input.form-control(type='password')
+                .footer.text-center
+                  button.btn.btn-rose.btn-simple.btn-wd.btn-lg(type='submit') Let's go
+    footer.footer
+      .container
+        nav.pull-left
+          ul
+            li
+              a(href='#')
+                | Home
+            li
+              a(href='#')
+                | Company
+            li
+              a(href='#')
+                | Portfolio
+            li
+              a(href='#')
+                | Blog
+        p.copyright.pull-right
+          | ©
+          script.
+            document.write(new Date().getFullYear())
+          a(href='http://www.creative-tim.com') Creative Tim
+          | , made with love for a better web

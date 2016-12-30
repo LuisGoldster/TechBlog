@@ -1,11 +1,12 @@
-import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { routing }       from './pages.routing';
+import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
 
-import { Pages } from './pages.component';
-import { NoContentComponent } from './no-content/no-content.component';
+import { PagesComponent } from './pages.component';
+import { LoginComponent } from './login/index';
+import { NoContentComponent } from './no-content/index';
 
 import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
 
@@ -21,7 +22,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
   ],
   declarations: [
-    Pages,
+    PagesComponent,
+    LoginComponent,
     NoContentComponent
   ]
 })

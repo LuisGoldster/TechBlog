@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 
-import { Articles } from './articles.component';
+import { ArticlesComponent } from './articles.component';
 import { routing } from './articles.routing';
 
 @NgModule({
@@ -14,7 +14,7 @@ import { routing } from './articles.routing';
     routing
   ],
   declarations: [
-    Articles
+    ArticlesComponent
   ],
   providers: []
 })

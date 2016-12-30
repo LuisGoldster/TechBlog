@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   template: require('./categories.component.pug'),
 })
-export class Categories {
+export class CategoriesComponent {
 
   constructor() {
   }

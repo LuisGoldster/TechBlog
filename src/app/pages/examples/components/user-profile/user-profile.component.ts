@@ -5,7 +5,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   template: require('./user-profile.component.pug'),
 })
-export class UserProfile {
+export class UserProfileComponent {
 
   constructor() {
   }

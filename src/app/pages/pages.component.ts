@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styles: [],
   template: require('./page.component.pug'),
 })
-export class Pages {
+export class PagesComponent {
 
   constructor() {
   }
