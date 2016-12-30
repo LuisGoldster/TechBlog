@@ -375,4 +375,4 @@ module.exports = function (options) {
     }
 
   };
-}
+};

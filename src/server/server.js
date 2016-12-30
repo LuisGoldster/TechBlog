@@ -20,7 +20,7 @@ const ROOT = path.join(__dirname, '../../dist');
 
 const app = express();
 app.set('port', process.env.PORT || 8080);
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(compression());
 app.use(express.static(ROOT));
 
