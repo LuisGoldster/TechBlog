@@ -120,6 +120,13 @@
     }
 }
 
+login{
+    > .wrapper-full-page{
+        position: absolute;
+        width: 100%;
+    }
+}
+
 .login-page,
 .lock-page{
     > .content{
