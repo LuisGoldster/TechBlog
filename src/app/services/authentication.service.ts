@@ -9,11 +9,19 @@ export class AuthenticationService {
 
     constructor(private http: Http) {
         // set token if saved in local storage
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
     }
 
     login(username: string, password: string): Observable<boolean> {
+
+        // // fake login
+        // localStorage.setItem('currentUser', JSON.stringify({
+        //     username: 'nhannhan159',
+        //     token: '123456'
+        // }));
+        // return new Observable<boolean>();
+
         return this.http.post('/api/authenticate', JSON.stringify({
                 username: username,
                 password: password

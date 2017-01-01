@@ -8,7 +8,14 @@ import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/index';
 import { NoContentComponent } from './no-content/index';
 
-import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
+import { AuthGuard } from '../guards/index';
+
+import { AuthenticationService } from '../services/index';
+
+import {
+  PerfectScrollbarModule,
+  PerfectScrollbarConfigInterface
+} from 'angular2-perfect-scrollbar';
 
 const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -25,6 +32,10 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PagesComponent,
     LoginComponent,
     NoContentComponent
+  ],
+  providers: [
+    AuthGuard,
+    AuthenticationService
   ]
 })
 export class PagesModule {

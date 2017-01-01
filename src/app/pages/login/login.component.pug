@@ -32,7 +32,7 @@ nav.navbar.navbar-primary.navbar-transparent.navbar-absolute
       .container
         .row
           .col-md-4.col-sm-6.col-md-offset-4.col-sm-offset-3
-            form(method='#', action='#')
+            form(method='#', action='#', (ngSubmit)="login()")
               .card.card-login //.card-hidden
                 .card-header.text-center(data-background-color='rose')
                   h4.card-title Login
