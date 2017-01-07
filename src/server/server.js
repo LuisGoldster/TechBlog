@@ -1,71 +1,57 @@
-const express     = require('express'),
-      compression = require('compression'),
-      path        = require('path'),
-      spdy        = require('spdy'),
-      morgan      = require('morgan'),
-      fs          = require('fs');
-      
-// const NEO_ASYNC   = require('neo-async');
+const express = require('express'),
+  unless = require('express-unless'),
+  compression = require('compression'),
+  path = require('path'),
+  spdy = require('spdy'),
+  morgan = require('morgan'),
+  fs = require('fs'),
+  jwt = require('express-jwt'),
+  cookieParser = require('cookie-parser'),
+  bodyParser = require('body-parser');
+
 const ROOT = path.join(__dirname, '../../dist');
 
-// Wait for testing
-// let filesToPush = [];
-// fs.readdir(ROOT, (error, data) => {
-//   data.forEach(name => {
-//     if (/bundle\.js\.gz/.test(name)) {
-//       filesToPush.push(name)
-//     }
-//   });
-// });
+const routes = require('./routes/index');
+const auth = require('./routes/auth');
+const article = require('./routes/article');
+const category = require('./routes/category');
 
 const app = express();
-app.set('port', process.env.PORT || 8080);
+const router = express.Router();
+const port = process.env.PORT || 8080;
+
 app.use(morgan('dev'));
 app.use(compression());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(ROOT));
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(ROOT, 'index.html'));
+// Using Json Web Token
+const authenticate = jwt({
+  secret: process.env.AUTH0_CLIENT_SECRET || 'TechBlog',
+  audience: process.env.AUTH0_CLIENT_ID || 'TechBlog'
+});
+authenticate.unless = unless;
+
+//app.use('/api', authenticate.unless({ path: '/api/auth' }));
+app.use('/api/auth', auth);
+// app.use('/api/article', article);
+// app.use('/api/category', category);
+app.use('/api/*', (req, res) => { res.status(404).send('Not found!'); });
+app.use('/*', routes);
+
+// Simple error handling
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  if (err.name === 'UnauthorizedError') {
+    res.status(401).send('Invalid token!');
+  } else {
+    res.status(500).send('Something broke!');
+  }
 });
 
-// Wait for testing
-// app.use((req, res, next) => {
-//   let assets = filesToPush
-//     .map((fileToPush) => {
-//       let fileToPushPath = path.join(ROOT, fileToPush);
-//       return (callBack) => {
-//         fs.readFile(fileToPushPath, (error, data) => {
-//           if (error) return callBack(error)
-//           try {
-//             res.push(`/${fileToPush}`, {
-//               request: {
-//                 'accept': '*/*',
-//                 'accept-encoding': 'gzip'
-//               },
-//               response: {
-//                 'content-type': 'application/javascript',
-//                 'content-encoding': 'gzip'
-//               }
-//             }).end(data);
-//             callBack();
-//           } catch(e) {
-//             callBack(e)
-//           }
-//         });
-//       };
-//     });
-//   assets.unshift((callBack) => {
-//     fs.readFile(path.join(ROOT, 'index.html'), (error, data) => {
-//       if (error) return callBack(error);
-//       res.write(data);
-//       callBack();
-//     });
-//   });
-//   NEO_ASYNC.parallel(assets, (results) => {
-//     res.end();
-//   });
-// });
-
+// Certificate for running http2 in ssl
 const options = {
   key: fs.readFileSync(path.join(ROOT, '../certificate/server.key')),
   cert: fs.readFileSync(path.join(ROOT, '../certificate/server.crt'))
@@ -73,6 +59,6 @@ const options = {
 
 const server = spdy
   .createServer(options, app)
-  .listen(app.get('port'), () => {
+  .listen(port, () => {
     console.log(`Listening on: https://localhost:${server.address().port}`);
   });
