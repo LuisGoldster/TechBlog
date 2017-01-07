@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
@@ -24,6 +25,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     NgaModule,
     routing,
     PerfectScrollbarModule.forRoot(PERFECT_SCROLLBAR_CONFIG)
