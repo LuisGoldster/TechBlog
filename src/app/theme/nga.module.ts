@@ -6,7 +6,10 @@ import { RouterModule } from '@angular/router';
 import { TbThemeConfig } from './theme.config';
 import { TbThemeConfigProvider } from './theme.configProvider';
 
-import { PerfectScrollbarModule, PerfectScrollbarConfigInterface } from 'angular2-perfect-scrollbar';
+import {
+  PerfectScrollbarModule,
+  PerfectScrollbarConfigInterface
+} from 'angular2-perfect-scrollbar';
 
 import {
   TbMenuItem,

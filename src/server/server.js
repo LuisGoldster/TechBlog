@@ -1,13 +1,13 @@
-const express = require('express'),
-  unless = require('express-unless'),
-  compression = require('compression'),
-  path = require('path'),
-  spdy = require('spdy'),
-  morgan = require('morgan'),
-  fs = require('fs'),
-  jwt = require('express-jwt'),
-  cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser');
+const express      = require('express'),
+      unless       = require('express-unless'),
+      compression  = require('compression'),
+      path         = require('path'),
+      spdy         = require('spdy'),
+      morgan       = require('morgan'),
+      fs           = require('fs'),
+      jwt          = require('express-jwt'),
+      cookieParser = require('cookie-parser'),
+      bodyParser   = require('body-parser');
 
 const ROOT = path.join(__dirname, '../../dist');
 
