@@ -13,6 +13,8 @@ import { AuthGuard } from '../guards/index';
 
 import { AuthenticationService } from '../services/index';
 
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+
 import {
   PerfectScrollbarModule,
   PerfectScrollbarConfigInterface
@@ -37,7 +39,8 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   providers: [
     AuthGuard,
-    AuthenticationService
+    AuthenticationService,
+    AUTH_PROVIDERS
   ]
 })
 export class PagesModule {

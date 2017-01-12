@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
+import { AuthHttp } from 'angular2-jwt';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -10,10 +11,10 @@ import { Category } from '../models/index';
 
 @Injectable()
 export class CategoryService {
-  constructor(private http: Http) { }
+  constructor(private authHttp: AuthHttp) { }
 
   search(term: string): Observable<Category[]> {
-    return this.http
+    return this.authHttp
       .get(`app/categories/?name=${term}`)
       .map((r: Response) => r.json().data as Category[])
       .catch((error: any) => {
