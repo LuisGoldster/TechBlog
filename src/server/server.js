@@ -25,7 +25,7 @@ app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(ROOT));
+app.use(express.static(ROOT, { maxAge: '1d' }));
 
 // Using Json Web Token
 const authenticate = jwt({

@@ -1,27 +1,25 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+import { Response } from '@angular/http';
+import { AuthHttp } from 'angular2-jwt';
 
-import { AuthenticationService } from './index';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
 import { User } from '../models/index';
 
 @Injectable()
 export class UserService {
-    constructor(
-        private http: Http,
-        private authenticationService: AuthenticationService) {
-    }
+  constructor(private authHttp: AuthHttp) { }
 
-    getUsers(): Observable<User[]> {
-        // add authorization header with jwt token
-        let headers = new Headers({
-            'Authorization': 'Bearer ' + this.authenticationService.token
-        });
-        let options = new RequestOptions({ headers: headers });
-
-        // get users from api
-        return this.http.get('/api/users', options)
-            .map((response: Response) => response.json());
-    }
+  search(term: string): Observable<User[]> {
+    return this.authHttp
+      .get(`app/users/?name=${term}`)
+      .map((r: Response) => r.json().data as User[])
+      .catch((error: any) => {
+          console.error('An friendly error occurred', error);
+          return Observable.throw(error.message || error);
+      });
+  }
 }

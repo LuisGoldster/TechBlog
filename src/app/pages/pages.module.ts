@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
@@ -10,10 +11,7 @@ import { LoginComponent } from './login/index';
 import { NoContentComponent } from './no-content/index';
 
 import { AuthGuard } from '../guards/index';
-
-import { AuthenticationService } from '../services/index';
-
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { AuthService } from '../services/index';
 
 import {
   PerfectScrollbarModule,
@@ -39,7 +37,7 @@ const PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   providers: [
     AuthGuard,
-    AuthenticationService,
+    AuthService,
     AUTH_PROVIDERS
   ]
 })
