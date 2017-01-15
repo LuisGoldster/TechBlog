@@ -5,15 +5,20 @@ const express      = require('express'),
       spdy         = require('spdy'),
       morgan       = require('morgan'),
       fs           = require('fs'),
-      jwt          = require('express-jwt'),
       cookieParser = require('cookie-parser'),
-      bodyParser   = require('body-parser');
+      bodyParser   = require('body-parser'),
+      jwt          = require('jsonwebtoken'),
+      passport      = require("passport"),
+      passportJWT   = require("passport-jwt");
+
+const ExtractJwt  = passportJWT.ExtractJwt;
+const JwtStrategy = passportJWT.Strategy;
 
 const ROOT = path.join(__dirname, '../../dist');
 
-const routes = require('./routes/index');
-const auth = require('./routes/auth');
-const article = require('./routes/article');
+const routes   = require('./routes/index');
+const auth     = require('./routes/auth');
+const article  = require('./routes/article');
 const category = require('./routes/category');
 
 const app = express();
@@ -27,12 +32,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(ROOT, { maxAge: '1d' }));
 
-// Using Json Web Token
-const authenticate = jwt({
-  secret: process.env.AUTH0_CLIENT_SECRET || 'TechBlog',
-  audience: process.env.AUTH0_CLIENT_ID || 'TechBlog'
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeader();
+jwtOptions.secretOrKey = 'secret';
+jwtOptions.issuer = 'auth.gpost.vn';
+jwtOptions.audience = 'gpost.vn';
+jwtOptions.authScheme = 'Bearer';
+
+passport.use(jwtOptions, (jwt_payload, next) => {
+  console.log('payload received', jwt_payload);
+  var user = users[_.findIndex(users, {id: jwt_payload.id})];
+  if (user) {
+    next(null, user);
+  } else {
+    next(null, false);
+  }
 });
-authenticate.unless = unless;
 
 //app.use('/api', authenticate.unless({ path: '/api/auth' }));
 app.use('/api/auth', auth);

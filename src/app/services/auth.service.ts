@@ -8,6 +8,8 @@ import { AuthConfigConsts, tokenNotExpired } from 'angular2-jwt';
 @Injectable()
 export class AuthService {
   private readonly AUTH_URL = '/api/auth/login';
+  private readonly AUTH_USER_NAME = 'username';
+  private readonly AUTH_TOKEN_NAME = AuthConfigConsts.DEFAULT_TOKEN_NAME;
 
   constructor(private http: Http) {}
 
@@ -23,8 +25,8 @@ export class AuthService {
         if (token) {
           // store username and jwt token in local storage
           // to keep user logged in between page refreshes
-          localStorage.setItem('username', username);
-          localStorage.setItem(AuthConfigConsts.DEFAULT_TOKEN_NAME, token);
+          localStorage.setItem(this.AUTH_USER_NAME, username);
+          localStorage.setItem(this.AUTH_TOKEN_NAME, token);
 
           // return true to indicate successful login
           return true;
@@ -37,8 +39,8 @@ export class AuthService {
 
   logout(): void {
     // clear token remove user from local storage to log user out
-    localStorage.removeItem('username');
-    localStorage.removeItem(AuthConfigConsts.DEFAULT_TOKEN_NAME);
+    localStorage.removeItem(this.AUTH_USER_NAME);
+    localStorage.removeItem(this.AUTH_TOKEN_NAME);
   }
 
   loggedIn(): boolean {
